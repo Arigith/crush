@@ -108,7 +108,8 @@ const HeroList = () => {
                                 {details.target_rune_stats}
                             </td>
                         </tr>
-                    ))}
+                    ))
+                }
             </table>
         </div>
     )
