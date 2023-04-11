@@ -1,7 +1,7 @@
 import Header from './Header';
 import Footer from './Footer';
-import Trial from './Trial';
-// import HeroList from './HeroList';
+// import Trial from './Trial';
+import HeroList from './HeroList';
 // import AddHero from './AddHero';
 // import BaseStats from './BaseStats';
 // import Runestat from './Runestat';
@@ -12,8 +12,8 @@ function App() {
   return (
     <div>
       <Header />
-      <Trial />
-      {/* <HeroList /> */}
+      {/* <Trial /> */}
+      <HeroList />
       {/* <AddHero /> */}
       {/* <BaseStats /> */}
       {/* <Runestat /> */}
