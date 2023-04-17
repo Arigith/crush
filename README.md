@@ -106,33 +106,33 @@ add pages need to do select dropdowns options
         Guard
 
     Add Rune Target options
-        hero_base_attack
-        hero_base_health
-        hero_base_defence
-        hero_base_critical_rate
-        hero_base_critical_damage
-        hero_base_attack_per_second
-        hero_base_attack_range
-        hero_base_movement_speed
-        hero_base_effect_resistence
-        hero_base_frenzy_chance
-        hero_base_dodge_rate
-        hero_base_stun_chance
-        hero_base_stun_time
-        hero_base_aoe_radius
-        hero_base_aoe_damage
-        hero_base_ultimate_attack
-        hero_base_knight_shield_hp
-        hero_base_bonus_gold
-        hero_base_freeze_time
-        hero_base_freeze_explosion_damage
-        hero_base_burn_chance
-        hero_base_burn_time
-        hero_base_burn_damage
-        hero_base_poison_chance
-        hero_base_poison_time
-        hero_base_poison_damage
+        attack
+        health
+        defence
+        critical_rate
+        critical_damage
+        attack_per_second
+        attack_range
+        movement_speed
+        effect_resistence
+        frenzy_chance
+        dodge_rate
+        stun_chance
+        stun_time
+        aoe_radius
+        aoe_damage
+        ultimate_attack
+        knight_shield_hp
+        bonus_gold
+        freeze_time
+        freeze_explosion_damage
+        burn_chance
+        burn_time
+        burn_damage
+        poison_chance
+        poison_time
+        poison_damage
 
 # Webpage Layout
 
-![Webpage Layout](https://github.com/Arigith/crush/tree/main/frontend/public/pictures/webpagelayout.jpg)
+You can find my webpage base layout ![here](https://github.com/Arigith/crush/tree/main/frontend/public/pictures/webpagelayout.jpg)
