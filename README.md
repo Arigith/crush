@@ -133,3 +133,6 @@ add pages need to do select dropdowns options
         hero_base_poison_time
         hero_base_poison_damage
 
+# Webpage Layout
+
+![Webpage Layout](`/pictures/$webpagelayout.jpg`)
