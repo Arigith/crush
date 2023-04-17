@@ -135,4 +135,4 @@ add pages need to do select dropdowns options
 
 # Webpage Layout
 
-![Webpage Layout](`frontend\public\pictures\webpagelayout.jpg`)
+![Webpage Layout](`https://github.com/Arigith/crush/tree/main/frontend/public/pictures\webpagelayout.jpg`)
