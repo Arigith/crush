@@ -5,55 +5,55 @@ This project is a copy of a project I am writing for a live project. This has ch
 # Text Mapping
 
 Database requirements:
-hero_name
-hero_picture
-hero_element
-hero_rarity
-hero_job
-hero_description
+hero_name,
+hero_picture,
+hero_element,
+hero_rarity,
+hero_job,
+hero_description,
 
-rune_1
-rune_2
-rune_3
+rune_1,
+rune_2,
+rune_3,
 
-target_1
-percentage_1
-target_2
-percentage_2
-target_3
-percentage_3
-target_4
-percentage_4
-target_5
-percentage_5
-target_6
-percentage_6
-target_7
+target_1,
+percentage_1,
+target_2,
+percentage_2,
+target_3,
+percentage_3,
+target_4,
+percentage_4,
+target_5,
+percentage_5,
+target_6,
+percentage_6,
+target_7,
 percentage_7
 
 Backend:
 DB to store:
-    hero info
-    login info
+    hero info,
+    login info,
 Queries
-    add basic hero info
-    add rune requirements
-    add rune target goals
-    show all hero's with data
-    ??show selected hero's data - Might not be required at the end
-    delete hero data by name
-    add user
-    delete user
+    add basic hero info,
+    add rune requirements,
+    add rune target goals,
+    show all hero's with data,
+    ??show selected hero's data - Might not be required at the end,
+    delete hero data by name,
+    add user,
+    delete user,
     add login
 
 Frontend Pages:
 Login not required:
-    Main page (show all hero data)
-    login
-Login required
-    add hero
-    add runes
-    add rune target
+    Main page (show all hero data),
+    login,
+Login required:
+    add hero,
+    add runes,
+    add rune target,
     Delete hero
 
 add pages need to do select dropdowns options
