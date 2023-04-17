@@ -109,29 +109,29 @@ add pages need to do select dropdowns options
         attack
         health
         defence
-        critical_rate
-        critical_damage
-        attack_per_second
-        attack_range
-        movement_speed
-        effect_resistence
-        frenzy_chance
-        dodge_rate
-        stun_chance
-        stun_time
-        aoe_radius
-        aoe_damage
-        ultimate_attack
-        knight_shield_hp
-        bonus_gold
-        freeze_time
-        freeze_explosion_damage
-        burn_chance
-        burn_time
-        burn_damage
-        poison_chance
-        poison_time
-        poison_damage
+        critical rate
+        critical damage
+        attack per second
+        attack range
+        movement speed
+        effect resistence
+        frenzy chance
+        dodge rate
+        stun chance
+        stun time
+        aoe radius
+        aoe damage
+        ultimate attack
+        knight shield hp
+        bonus gold
+        freeze time
+        freeze explosion_damage
+        burn chance
+        burn time
+        burn damage
+        poison chance
+        poison time
+        poison damage
 
 # Webpage Layout
 
