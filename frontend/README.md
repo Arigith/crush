@@ -1,7 +1,3 @@
-# Notification
-
-This project is a copy of a project I am writing for a live project. This has changed any keys I have made on the version I plan to make live.
-
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
