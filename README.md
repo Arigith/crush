@@ -135,4 +135,4 @@ add pages need to do select dropdowns options
 
 # Webpage Layout
 
-![Webpage Layout](`/pictures/$webpagelayout.jpg`)
+![Webpage Layout](`/pictures/webpagelayout.jpg`)
