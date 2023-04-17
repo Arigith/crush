@@ -11,11 +11,9 @@ hero_element,
 hero_rarity,
 hero_job,
 hero_description,
-
 rune_1,
 rune_2,
 rune_3,
-
 target_1,
 percentage_1,
 target_2,
