@@ -45,9 +45,6 @@ const Registration = () => {
         .then(resp => resp.json())
         .then(data => {console.log(data)})
         .catch(err => console.log(err))
-        .then(setUser(''))
-        .then(setPwd(''))
-        .then(setMatchpwd(''))
     };
 
     return (

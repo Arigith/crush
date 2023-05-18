@@ -10,62 +10,53 @@ class Hash():
     def verify(plain_password, hashed_password):
         return pwd_ctxt.verify(plain_password, hashed_password)
 
-class HeroBase(BaseModel):
+class BaseHero(BaseModel):
     hero_name:str
-    hero_picture:str
     hero_element:str
     hero_rarity:str
     hero_job:str
-    hero_obtain:str
-    hero_description:str
-
-class HeroBases(HeroBase):
-    class Config():
-        orm_mode=True
-
-class BaseStats(BaseModel):
-    hero_base_attack:int
-    hero_base_health:int
-    hero_base_defence:int
-    hero_base_critical_rate:int
-    hero_base_critical_damage:int
-    hero_base_attack_per_second:int
-    hero_base_attack_range:int
-    hero_base_movement_speed:int
-    hero_base_effect_resistence:int
-    hero_base_frenzy_chance:int
-    hero_base_dodge_rate:int
-    hero_base_stun_chance:int
-    hero_base_stun_time:int
-    hero_base_aoe_radius:int
-    hero_base_aoe_damage:int
-    hero_base_ultimate_attack:int
-    hero_base_knight_shield_hp:int
-    hero_base_bonus_gold:int
-    hero_base_freeze_time:int
-    hero_base_freeze_explosion_damage:int
-    hero_base_burn_chance:int
-    hero_base_burn_time:int
-    hero_base_burn_damage:int
-    hero_base_poison_chance:int
-    hero_base_poison_time:int
-    hero_base_poison_damage:int
-
-class BaseStatisics(BaseStats):
-    class Config():
-        orm_mode=True
 
 class BaseRune(BaseModel):
-    rune_1:str
-    rune_2:str
-    rune_3:str
-    target_rune_stats:str
+    hero_rune_1:str
+    hero_rune_2:str
+    hero_rune_3:str
 
-class BaseRunes(BaseRune):
+class BaseTarget(BaseModel):
+    hero_rune_target_1:str
+    hero_rune_target_1_percentage:int
+    hero_rune_target_2:str
+    hero_rune_target_2_percentage:int
+    hero_rune_target_3:str
+    hero_rune_target_3_percentage:int
+    hero_rune_target_4:str
+    hero_rune_target_4_percentage:int
+    hero_rune_target_5:str
+    hero_rune_target_5_percentage:int
+    hero_rune_target_6:str
+    hero_rune_target_6_percentage:int
+    hero_rune_target_7:str
+    hero_rune_target_7_percentage:int
+
+class BaseInfo(BaseModel):
+    hero_info:str
+
+class HeroBase(BaseHero):
     class Config():
         orm_mode=True
 
-class AllHero(BaseRune, BaseStats, HeroBase):
+class HeroRune(BaseRune):
+    class Config():
+        orm_mode=True
+
+class HeroRuneTarget(BaseTarget):
+    class Config():
+        orm_mode=True
+
+class HeroInfo(BaseInfo):
+    class Config():
+        orm_mode=True
+
+class AllHero(HeroInfo, HeroRuneTarget, HeroRune, HeroBase):
     class Config():
         orm_mode=True
         
@@ -74,6 +65,14 @@ class Userdetails(BaseModel):
     password:str
 
 class UserCommit(Userdetails):
+    class Config():
+        orm_mode=True
+        
+class UserList(BaseModel):
+    userid:int
+    username:str
+
+class UserListCommit(UserList):
     class Config():
         orm_mode=True
 

@@ -25,56 +25,63 @@ app.add_middleware(
 
 models.Base.metadata.create_all(engine)
 
-# Add basic hero and info
+# Add hero
 @app.post('/hero', tags=['Login Required'])
-def add_hero(request:schemas.HeroBases, db:Session=Depends(get_db)):
-    new_hero=models.HeroTable(
-        hero_name=request.hero_name,
-        hero_picture=request.hero_picture,
-        hero_element=request.hero_element,
-        hero_rarity=request.hero_rarity,
-        hero_job=request.hero_job,
-        hero_obtain=request.hero_obtain,
-        hero_description=request.hero_description,
+def add_hero(request:schemas.HeroBase, db:Session=Depends(get_db)):
+    data=models.HeroTable(
+        hero_name=request.hero_name.lower(),
+        hero_element=request.hero_element.title(),
+        hero_rarity=request.hero_rarity.title(),
+        hero_job=request.hero_job.title(),
     )
-    db.add(new_hero)
+    db.add(data)
     db.commit()
-    db.refresh(new_hero)
-    return new_hero
+    db.refresh(data)
+    return data
 
-# Update selected heros base stats
-@app.put('/hero/updatebasestats/{hero_name}', tags=['Login Required'])
-def updatehero(hero_name, request:schemas.BaseStatisics, db:Session=Depends(get_db)):
-    base_stats=db.query(models.HeroTable).filter(models.HeroTable.hero_name == hero_name)
-    if not base_stats.first():
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f'No character with the name {hero_name} not found')
-    base_stats.update(request.dict())
-    db.commit()
-    return 'Updated as requested'
-
-# Add to DB the RUNES to given selected hero
+# Add RUNES to given selected hero
 @app.put('/hero/updatebaserune/{hero_name}', tags=['Login Required'])
-def hero_runes(hero_name, request: schemas.BaseRunes, db:Session=Depends(get_db)):
-    baserunes=db.query(models.HeroTable).filter(models.HeroTable.hero_name == hero_name)
-    if not baserunes.first():
+def hero_runes(hero_name, request: schemas.HeroRune, db:Session=Depends(get_db)):
+    data=db.query(models.HeroTable).filter(models.HeroTable.hero_name == hero_name)
+    if not data.first():
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f'No character with the name {hero_name} not found')
     try:
-        baserunes.update(request.dict())
+        data.update(request.dict())
         db.commit()
     except Exception as e:
         print(f"Exception: {e}")
         raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=f"Error updating baserunes for {hero_name}")
     return 'Updated as requested'
 
-# Delete selected hero data by id
-@app.delete('/hero/deletebyid/{id}', tags=['Login Required'])
-def delete_by_id(id, db:Session=Depends(get_db)):
-    dbi=db.query(models.HeroTable).filter(models.HeroTable.id == id)
-    if not dbi.first():
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f'There is no character with the id #{id} found')
-    dbi.delete(synchronize_session=False)
+# Add RUNE TARGETS to given selected hero
+@app.put('/hero/updaterunetargets/{hero_name}', tags=['Login Required'])
+def updatehero(hero_name, request:schemas.HeroRuneTarget, db:Session=Depends(get_db)):
+    data=db.query(models.HeroTable).filter(models.HeroTable.hero_name == hero_name)
+    if not data.first():
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f'No character with the name {hero_name} not found')
+    data.update(request.dict())
     db.commit()
-    return 'Deleted as requested'
+    return 'Updated as requested'
+
+# Add INFO about hero and how to build
+@app.put('/hero/updateinfo/{hero_name}', tags=['Login Required'])
+def updateinfo(hero_name, request:schemas.HeroInfo, db:Session=Depends(get_db)):
+    data=db.query(models.HeroTable).filter(models.HeroTable.hero_name == hero_name)
+    if not data.first():
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f'No character with the name {hero_name} not found')
+    data.update(request.dict())
+    db.commit()
+    return 'Updated as requested'
+
+# # Delete selected hero data by id
+# @app.delete('/hero/deletebyid/{id}', tags=['Login Required'])
+# def delete_by_id(id, db:Session=Depends(get_db)):
+#     dbi=db.query(models.HeroTable).filter(models.HeroTable.id == id)
+#     if not dbi.first():
+#         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f'There is no character with the id #{id} found')
+#     dbi.delete(synchronize_session=False)
+#     db.commit()
+#     return 'Deleted as requested'
 
 # Delete seleted hero by name
 @app.delete('/hero/deletebyname/{hero_name}', tags=['Login Required'])
@@ -86,11 +93,13 @@ def delete_by_name(hero_name, db:Session=Depends(get_db)):
     db.commit()
     return 'Deleted as requested'
 
+# Get all hero data
 @app.get('/hero/get_all', response_model=list[schemas.AllHero], tags=['For All Users'])
 def get_all(db:Session=Depends(get_db)):
     details=db.query(models.HeroTable).all()
     return details
 
+# get selected hero data
 @app.get('/hero/show/{hero_name}', response_model=schemas.AllHero, tags=['For All Users'])
 def get_by_name(hero_name, db:Session=Depends(get_db)):
     details=db.query(models.HeroTable).filter(models.HeroTable.hero_name == hero_name).first()
@@ -98,7 +107,8 @@ def get_by_name(hero_name, db:Session=Depends(get_db)):
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f'Sorry not details found with the name {hero_name}')
     return details
 
-@app.post('/registration')
+# Registration
+@app.post('/registration', tags=['Not shown'])
 def registration(
         request: schemas.UserCommit, 
         db:Session=Depends(get_db)
@@ -113,7 +123,8 @@ def registration(
     print(data)
     return 'Registration was successful'
 
-@app.delete('/user/delete/{userid}')
+# Delete user
+@app.delete('/user/delete/{userid}', tags=['Not shown'])
 def delete_userid(userid, db:Session=Depends(get_db)):
     data=db.query(models.UserTable).filter(models.UserTable.userid == userid)
     if not data.first():
@@ -122,6 +133,7 @@ def delete_userid(userid, db:Session=Depends(get_db)):
     db.commit()
     return 'Deleted as requested'
 
+# Login
 @app.post('/login', tags=['login'])
 def user_login(request:OAuth2PasswordRequestForm=Depends(), db:Session=Depends(get_db)):
     user=db.query(models.UserTable).filter(models.UserTable.username==request.username).first()
@@ -142,7 +154,8 @@ def user_login(request:OAuth2PasswordRequestForm=Depends(), db:Session=Depends(g
         )
     return {"access_token": access_token, "token_type": "bearer"}
 
-@app.get('/users/show', response_model=list[schemas.UserCommit])
-def show_users(db:Session=Depends(get_db), get_current_user: schemas.Userdetails=Depends(oauth2.get_current_user)):
+# Show user list after login
+@app.get('/users/show', response_model=list[schemas.UserListCommit], tags=['login'])
+def show_users(db:Session=Depends(get_db), get_current_user: schemas.UserList=Depends(oauth2.get_current_user)):
     users=db.query(models.UserTable).all()
     return users
