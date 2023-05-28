@@ -37,6 +37,10 @@ const AddHero = () => {
         .then(resp => resp.json())
         .then(data => {console.log(data)})
         .catch(err => {console.log(err)})
+        .then(setName(''))
+        .then(setElement(''))
+        .then(setRarity(''))
+        .then(setJob(''))
     };
 
     return (
