@@ -51,36 +51,36 @@ const AddHero = () => {
                 <br/>
 
                 <select value={element} onChange={handleElementChange}>
-                    <option>Select Element</option>
-                    <option>Fire</option>
-                    <option>Water</option>
-                    <option>Earth</option>
-                    <option>Light</option>
-                    <option>Dark</option>
+                    <option value=''>Select Element</option>
+                    <option value='Fire'>Fire</option>
+                    <option value='Water'>Water</option>
+                    <option value='Earth'>Earth</option>
+                    <option value='Light'>Light</option>
+                    <option value='Dark'>Dark</option>
                 </select>
                 <br/>
 
                 <select value={rarity} onChange={handleRarityChange}>
-                    <option>Select Rarity</option>
-                    <option>Common</option>
-                    <option>Rare</option>
-                    <option>Epic</option>
-                    <option>Legendary</option>
+                    <option value=''>Select Rarity</option>
+                    <option value='Common'>Common</option>
+                    <option value='Rare'>Rare</option>
+                    <option value='Epic'>Epic</option>
+                    <option value='Legendary'>Legendary</option>
                 </select>
                 <br/>
 
                 <select value={job} onChange={handleJobChange}>
-                    <option>Select Job</option>
-                    <option>Brawler</option>
-                    <option>Barbarian</option>
-                    <option>Knight</option>
-                    <option>Rogue</option>
-                    <option>Lancer</option>
-                    <option>Samurai</option>
-                    <option>Ranger</option>
-                    <option>Magician</option>
-                    <option>Gunner</option>
-                    <option>Support</option>
+                    <option value=''>Select Job</option>
+                    <option value='Brawler'>Brawler</option>
+                    <option value='Barbarian'>Barbarian</option>
+                    <option value='Knight'>Knight</option>
+                    <option value='Rogue'>Rogue</option>
+                    <option value='Lancer'>Lancer</option>
+                    <option value='Samurai'>Samurai</option>
+                    <option value='Ranger'>Ranger</option>
+                    <option value='Magician'>Magician</option>
+                    <option value='Gunner'>Gunner</option>
+                    <option value='Support'>Support</option>
                 </select>
                 <br/>
                 <br/>
