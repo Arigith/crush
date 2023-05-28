@@ -5,6 +5,18 @@ const AddHero = () => {
     const [element, setElement] = useState(['']);
     const [rarity, setRarity] = useState(['']);
     const [job, setJob] = useState(['']);
+
+    const handleElementChange = (evt) => {
+        setElement(evt.target.value);
+    };
+
+    const handleRarityChange = (evt) => {
+        setRarity(evt.target.value);
+    };
+
+    const handleJobChange = (evt) => {
+        setJob(evt.target.value);
+    };
     
     function handleSubmit(evt) {
         evt.preventDefault();
@@ -38,28 +50,40 @@ const AddHero = () => {
                 />
                 <br/>
 
-                <input
-                    type='text'
-                    value={element}
-                    placeholder='Element'
-                    onChange={(evt) => setElement(evt.target.value)}
-                />
+                <select value={element} onChange={handleElementChange}>
+                    <option>Select Element</option>
+                    <option>Fire</option>
+                    <option>Water</option>
+                    <option>Earth</option>
+                    <option>Light</option>
+                    <option>Dark</option>
+                </select>
                 <br/>
 
-                <input
-                    type='text'
-                    value={rarity}
-                    placeholder='Rarity'
-                    onChange={(evt) => setRarity(evt.target.value)}
-                />
+                <select value={rarity} onChange={handleRarityChange}>
+                    <option>Select Rarity</option>
+                    <option>Common</option>
+                    <option>Rare</option>
+                    <option>Epic</option>
+                    <option>Legendary</option>
+                </select>
                 <br/>
 
-                <input
-                    type='text'
-                    value={job}
-                    placeholder='Job'
-                    onChange={(evt) => setJob(evt.target.value)}
-                />
+                <select value={job} onChange={handleJobChange}>
+                    <option>Select Job</option>
+                    <option>Brawler</option>
+                    <option>Barbarian</option>
+                    <option>Knight</option>
+                    <option>Rogue</option>
+                    <option>Lancer</option>
+                    <option>Samurai</option>
+                    <option>Ranger</option>
+                    <option>Magician</option>
+                    <option>Gunner</option>
+                    <option>Support</option>
+                </select>
+                <br/>
+                <br/>
                 <br/>
 
                 <button type='submit'>Update</button>
