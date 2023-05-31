@@ -9,14 +9,21 @@ const AddRune = () => {
     const [runetwo, setRunetwo] = useState('');
     const [runethree, setRunethree] = useState('');
 
+    const handleRuneOneChange = (evt) => {
+        setRuneone(evt.target.value);
+    };
+
+    const handleRuneTwoChange = (evt) => {
+        setRunetwo(evt.target.value);
+    };
+
+    const handleRuneThreeChange = (evt) => {
+        setRunethree(evt.target.value);
+    };
+
     async function TableHeros() {
         try {
             const response = await fetch("http://127.0.0.1:8000/hero/get_all");
-            // const response = await fetch("http://127.0.0.1:8000/hero/get_all", {
-            //     headers: {
-            //         'Authorization': `Bearer ${window.localStorage.getItem('access_token')}`
-            //     }}
-            // );
             const data = await response.json();
             console.log(data);
             setHeroList(data);
@@ -50,7 +57,6 @@ const AddRune = () => {
         .then(setRuneone(''))
         .then(setRunetwo(''))
         .then(setRunethree(''))
-        .then(setTargetrunestats(''))
     };
 
     return (
@@ -66,28 +72,88 @@ const AddRune = () => {
                 </label>
                 <br/>
 
-                <input
-                    type='text'
-                    value={runeone}
-                    placeholder='Runeset 1'
-                    onChange={(evt) => setRuneone(evt.target.value)}
-                />
+                <select value={runeone} onChange={handleRuneOneChange}>
+                    <option value=''>Select Rune One</option>
+                    <option value='Blight'>Blight</option>
+                    <option value='Burning'>Burning</option>
+                    <option value='Chilling'>Chilling</option>
+                    <option value='Damage'>Damage</option>
+                    <option value='Dazed'>Dazed</option>
+                    <option value='Frenzy'>Frenzy</option>
+                    <option value='Frozen'>Frozen</option>
+                    <option value='Guard'>Guard</option>
+                    <option value='Helpful'>Helpful</option>
+                    <option value='Ignite'>Ignite</option>
+                    <option value='Intelligent'>Intelligent</option>
+                    <option value='Nimble'>Nimble</option>
+                    <option value='Phalanx'>Phalanx</option>
+                    <option value='Poisonous'>Poisonous</option>
+                    <option value='Precise'>Precise</option>
+                    <option value='Rage'>Rage</option>
+                    <option value='Resist'>Resist</option>
+                    <option value='Splash'>Splash</option>
+                    <option value='Spoiling'>Spoiling</option>
+                    <option value='Stunning'>Stunning</option>
+                    <option value='Swift'>Swift</option>
+                    <option value='Vitality'>Vitality</option>
+                    <option value='Wrath'>Wrath</option>
+                </select>
                 <br/>
 
-                <input
-                    type='text'
-                    value={runetwo}
-                    placeholder='Runeset 2'
-                    onChange={(evt) => setRunetwo(evt.target.value)}
-                />
+                <select value={runetwo} onChange={handleRuneTwoChange}>
+                    <option value=''>Select Rune Two</option>
+                    <option value='Blight'>Blight</option>
+                    <option value='Burning'>Burning</option>
+                    <option value='Chilling'>Chilling</option>
+                    <option value='Damage'>Damage</option>
+                    <option value='Dazed'>Dazed</option>
+                    <option value='Frenzy'>Frenzy</option>
+                    <option value='Frozen'>Frozen</option>
+                    <option value='Guard'>Guard</option>
+                    <option value='Helpful'>Helpful</option>
+                    <option value='Ignite'>Ignite</option>
+                    <option value='Intelligent'>Intelligent</option>
+                    <option value='Nimble'>Nimble</option>
+                    <option value='Phalanx'>Phalanx</option>
+                    <option value='Poisonous'>Poisonous</option>
+                    <option value='Precise'>Precise</option>
+                    <option value='Rage'>Rage</option>
+                    <option value='Resist'>Resist</option>
+                    <option value='Splash'>Splash</option>
+                    <option value='Spoiling'>Spoiling</option>
+                    <option value='Stunning'>Stunning</option>
+                    <option value='Swift'>Swift</option>
+                    <option value='Vitality'>Vitality</option>
+                    <option value='Wrath'>Wrath</option>
+                </select>
                 <br/>
 
-                <input
-                    type='text'
-                    value={runethree}
-                    placeholder='Runeset 3'
-                    onChange={(evt) => setRunethree(evt.target.value)}
-                />
+                <select value={runethree} onChange={handleRuneThreeChange}>
+                    <option value=''>Select Rune Three</option>
+                    <option value='Blight'>Blight</option>
+                    <option value='Burning'>Burning</option>
+                    <option value='Chilling'>Chilling</option>
+                    <option value='Damage'>Damage</option>
+                    <option value='Dazed'>Dazed</option>
+                    <option value='Frenzy'>Frenzy</option>
+                    <option value='Frozen'>Frozen</option>
+                    <option value='Guard'>Guard</option>
+                    <option value='Helpful'>Helpful</option>
+                    <option value='Ignite'>Ignite</option>
+                    <option value='Intelligent'>Intelligent</option>
+                    <option value='Nimble'>Nimble</option>
+                    <option value='Phalanx'>Phalanx</option>
+                    <option value='Poisonous'>Poisonous</option>
+                    <option value='Precise'>Precise</option>
+                    <option value='Rage'>Rage</option>
+                    <option value='Resist'>Resist</option>
+                    <option value='Splash'>Splash</option>
+                    <option value='Spoiling'>Spoiling</option>
+                    <option value='Stunning'>Stunning</option>
+                    <option value='Swift'>Swift</option>
+                    <option value='Vitality'>Vitality</option>
+                    <option value='Wrath'>Wrath</option>
+                </select>
                 <br/>
 
                 <button type='submit'>Update</button>
