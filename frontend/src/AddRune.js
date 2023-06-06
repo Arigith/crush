@@ -155,6 +155,8 @@ const AddRune = () => {
                     <option value='Wrath'>Wrath</option>
                 </select>
                 <br/>
+                <br/>
+                <br/>
 
                 <button type='submit'>Update</button>
             </form>

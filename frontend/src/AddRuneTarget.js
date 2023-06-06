@@ -20,6 +20,34 @@ const AddRuneTarget = () => {
     const [runeTargetSeven, setRuneTargetSeven] = useState([''])
     const [runeTargetSevenPercentage, setRuneTargetSevenPercentage] = useState([''])
 
+    const handleTargetOneChange = (evt) => {
+        setRuneTargetOne(evt.target.value);
+    };
+    
+    const handleTargetTwoChange = (evt) => {
+        setRuneTargetTwo(evt.target.value);
+    };
+    
+    const handleTargetThreeChange = (evt) => {
+        setRuneTargetThree(evt.target.value);
+    };
+    
+    const handleTargetFourChange = (evt) => {
+        setRuneTargetFour(evt.target.value);
+    };
+    
+    const handleTargetFiveChange = (evt) => {
+        setRuneTargetFive(evt.target.value);
+    };
+    
+    const handleTargetSixChange = (evt) => {
+        setRuneTargetSix(evt.target.value);
+    };
+    
+    const handleTargetSevenChange = (evt) => {
+        setRuneTargetSeven(evt.target.value);
+    };
+
     async function TableHeros() {
         try {
             const response = await fetch("http://127.0.0.1:8000/hero/get_all");
@@ -99,14 +127,36 @@ const AddRuneTarget = () => {
             <br/>
 
                 <label>Target One: </label>
-                <input
-                    type='text'
-                    id='hero_rune_target_1'
-                    value={runeTargetOne}
-                    autoComplete='off'
-                    onChange={(e) => setRuneTargetOne(e.target.value)}
-                    required
-                />
+                <select value={runeTargetOne} onChange={handleTargetOneChange}>
+                    <option value=''>Set Rune Target One</option>
+                    <option value='AoE Damage'>AoE Damage</option>
+                    <option value='AoE Radius'>AoE Radius</option>
+                    <option value='ATK'>ATK</option>
+                    <option value='Atk per sec'>Atk per sec</option>
+                    <option value='Atk Range'>Atk Range</option>
+                    <option value='Bonus Gold'>Bonus Gold</option>
+                    <option value='Burn Chance'>Burn Chance</option>
+                    <option value='Burn Dmg'>Burn Dmg</option>
+                    <option value='Burn Time'>Burn Time</option>
+                    <option value='Critical Damage'>Critical Damage</option>
+                    <option value='Critical Rate'>Critical Rate</option>
+                    <option value='Def'>Def</option>
+                    <option value='Dodge Rate'>Dodge Rate</option>
+                    <option value='Effect Resistance'>Effect Resistance</option>
+                    <option value='Freeze Chance'>Freeze Chance</option>
+                    <option value='Freeze Ezplosion Dmg'>Freeze Ezplosion Dmg</option>
+                    <option value='Freeze Time'>Freeze Time</option>
+                    <option value='Frenzy Chance'>Frenzy Chance</option>
+                    <option value='HP'>HP</option>
+                    <option value='Knight Shield HP'>Knight Shield HP</option>
+                    <option value='Move Speed'>Move Speed</option>
+                    <option value='Poison Chance'>Poison Chance</option>
+                    <option value='Poison Dmg'>Poison Dmg</option>
+                    <option value='Poison Time'>Poison Time</option>
+                    <option value='Stun Chance'>Stun Chance</option>
+                    <option value='Stun Time'>Stun Time</option>
+                    <option value='Ultimate Atk'>Ultimate Atk</option>
+                </select>
                 <br/>
 
                 <label>Target One Percentage: </label>
@@ -121,14 +171,36 @@ const AddRuneTarget = () => {
                 <br/>
 
                 <label>Target Two: </label>
-                <input
-                    type='text'
-                    id='hero_rune_target_2'
-                    value={runeTargetTwo}
-                    autoComplete='off'
-                    onChange={(e) => setRuneTargetTwo(e.target.value)}
-                    required
-                />
+                <select value={runeTargetTwo} onChange={handleTargetTwoChange}>
+                    <option value=''>Set Rune Target Two</option>
+                    <option value='AoE Damage'>AoE Damage</option>
+                    <option value='AoE Radius'>AoE Radius</option>
+                    <option value='ATK'>ATK</option>
+                    <option value='Atk per sec'>Atk per sec</option>
+                    <option value='Atk Range'>Atk Range</option>
+                    <option value='Bonus Gold'>Bonus Gold</option>
+                    <option value='Burn Chance'>Burn Chance</option>
+                    <option value='Burn Dmg'>Burn Dmg</option>
+                    <option value='Burn Time'>Burn Time</option>
+                    <option value='Critical Damage'>Critical Damage</option>
+                    <option value='Critical Rate'>Critical Rate</option>
+                    <option value='Def'>Def</option>
+                    <option value='Dodge Rate'>Dodge Rate</option>
+                    <option value='Effect Resistance'>Effect Resistance</option>
+                    <option value='Freeze Chance'>Freeze Chance</option>
+                    <option value='Freeze Ezplosion Dmg'>Freeze Ezplosion Dmg</option>
+                    <option value='Freeze Time'>Freeze Time</option>
+                    <option value='Frenzy Chance'>Frenzy Chance</option>
+                    <option value='HP'>HP</option>
+                    <option value='Knight Shield HP'>Knight Shield HP</option>
+                    <option value='Move Speed'>Move Speed</option>
+                    <option value='Poison Chance'>Poison Chance</option>
+                    <option value='Poison Dmg'>Poison Dmg</option>
+                    <option value='Poison Time'>Poison Time</option>
+                    <option value='Stun Chance'>Stun Chance</option>
+                    <option value='Stun Time'>Stun Time</option>
+                    <option value='Ultimate Atk'>Ultimate Atk</option>
+                </select>
                 <br/>
 
                 <label>Target Two Percentage: </label>
@@ -143,14 +215,36 @@ const AddRuneTarget = () => {
                 <br/>
 
                 <label>Target Three: </label>
-                <input
-                    type='text'
-                    id='hero_rune_target_3'
-                    value={runeTargetThree}
-                    autoComplete='off'
-                    onChange={(e) => setRuneTargetThree(e.target.value)}
-                    required
-                />
+                <select value={runeTargetThree} onChange={handleTargetThreeChange}>
+                    <option value=''>Set Rune Target Three</option>
+                    <option value='AoE Damage'>AoE Damage</option>
+                    <option value='AoE Radius'>AoE Radius</option>
+                    <option value='ATK'>ATK</option>
+                    <option value='Atk per sec'>Atk per sec</option>
+                    <option value='Atk Range'>Atk Range</option>
+                    <option value='Bonus Gold'>Bonus Gold</option>
+                    <option value='Burn Chance'>Burn Chance</option>
+                    <option value='Burn Dmg'>Burn Dmg</option>
+                    <option value='Burn Time'>Burn Time</option>
+                    <option value='Critical Damage'>Critical Damage</option>
+                    <option value='Critical Rate'>Critical Rate</option>
+                    <option value='Def'>Def</option>
+                    <option value='Dodge Rate'>Dodge Rate</option>
+                    <option value='Effect Resistance'>Effect Resistance</option>
+                    <option value='Freeze Chance'>Freeze Chance</option>
+                    <option value='Freeze Ezplosion Dmg'>Freeze Ezplosion Dmg</option>
+                    <option value='Freeze Time'>Freeze Time</option>
+                    <option value='Frenzy Chance'>Frenzy Chance</option>
+                    <option value='HP'>HP</option>
+                    <option value='Knight Shield HP'>Knight Shield HP</option>
+                    <option value='Move Speed'>Move Speed</option>
+                    <option value='Poison Chance'>Poison Chance</option>
+                    <option value='Poison Dmg'>Poison Dmg</option>
+                    <option value='Poison Time'>Poison Time</option>
+                    <option value='Stun Chance'>Stun Chance</option>
+                    <option value='Stun Time'>Stun Time</option>
+                    <option value='Ultimate Atk'>Ultimate Atk</option>
+                </select>
                 <br/>
 
                 <label>Target Three Percentage: </label>
@@ -165,14 +259,36 @@ const AddRuneTarget = () => {
                 <br/>
 
                 <label>Target Four: </label>
-                <input
-                    type='text'
-                    id='hero_rune_target_4'
-                    value={runeTargetFour}
-                    autoComplete='off'
-                    onChange={(e) => setRuneTargetFour(e.target.value)}
-                    required
-                />
+                <select value={runeTargetFour} onChange={handleTargetFourChange}>
+                    <option value=''>Set Rune Target Four</option>
+                    <option value='AoE Damage'>AoE Damage</option>
+                    <option value='AoE Radius'>AoE Radius</option>
+                    <option value='ATK'>ATK</option>
+                    <option value='Atk per sec'>Atk per sec</option>
+                    <option value='Atk Range'>Atk Range</option>
+                    <option value='Bonus Gold'>Bonus Gold</option>
+                    <option value='Burn Chance'>Burn Chance</option>
+                    <option value='Burn Dmg'>Burn Dmg</option>
+                    <option value='Burn Time'>Burn Time</option>
+                    <option value='Critical Damage'>Critical Damage</option>
+                    <option value='Critical Rate'>Critical Rate</option>
+                    <option value='Def'>Def</option>
+                    <option value='Dodge Rate'>Dodge Rate</option>
+                    <option value='Effect Resistance'>Effect Resistance</option>
+                    <option value='Freeze Chance'>Freeze Chance</option>
+                    <option value='Freeze Ezplosion Dmg'>Freeze Ezplosion Dmg</option>
+                    <option value='Freeze Time'>Freeze Time</option>
+                    <option value='Frenzy Chance'>Frenzy Chance</option>
+                    <option value='HP'>HP</option>
+                    <option value='Knight Shield HP'>Knight Shield HP</option>
+                    <option value='Move Speed'>Move Speed</option>
+                    <option value='Poison Chance'>Poison Chance</option>
+                    <option value='Poison Dmg'>Poison Dmg</option>
+                    <option value='Poison Time'>Poison Time</option>
+                    <option value='Stun Chance'>Stun Chance</option>
+                    <option value='Stun Time'>Stun Time</option>
+                    <option value='Ultimate Atk'>Ultimate Atk</option>
+                </select>
                 <br/>
 
                 <label>Target Four Percentage: </label>
@@ -187,14 +303,35 @@ const AddRuneTarget = () => {
                 <br/>
 
                 <label>Target Five: </label>
-                <input
-                    type='text'
-                    id='hero_rune_target_5'
-                    value={runeTargetFive}
-                    autoComplete='off'
-                    onChange={(e) => setRuneTargetFive(e.target.value)}
-                    required
-                />
+                <select value={runeTargetFive} onChange={handleTargetFiveChange}>
+                <option value='AoE Damage'>AoE Damage</option>
+                    <option value='AoE Radius'>AoE Radius</option>
+                    <option value='ATK'>ATK</option>
+                    <option value='Atk per sec'>Atk per sec</option>
+                    <option value='Atk Range'>Atk Range</option>
+                    <option value='Bonus Gold'>Bonus Gold</option>
+                    <option value='Burn Chance'>Burn Chance</option>
+                    <option value='Burn Dmg'>Burn Dmg</option>
+                    <option value='Burn Time'>Burn Time</option>
+                    <option value='Critical Damage'>Critical Damage</option>
+                    <option value='Critical Rate'>Critical Rate</option>
+                    <option value='Def'>Def</option>
+                    <option value='Dodge Rate'>Dodge Rate</option>
+                    <option value='Effect Resistance'>Effect Resistance</option>
+                    <option value='Freeze Chance'>Freeze Chance</option>
+                    <option value='Freeze Ezplosion Dmg'>Freeze Ezplosion Dmg</option>
+                    <option value='Freeze Time'>Freeze Time</option>
+                    <option value='Frenzy Chance'>Frenzy Chance</option>
+                    <option value='HP'>HP</option>
+                    <option value='Knight Shield HP'>Knight Shield HP</option>
+                    <option value='Move Speed'>Move Speed</option>
+                    <option value='Poison Chance'>Poison Chance</option>
+                    <option value='Poison Dmg'>Poison Dmg</option>
+                    <option value='Poison Time'>Poison Time</option>
+                    <option value='Stun Chance'>Stun Chance</option>
+                    <option value='Stun Time'>Stun Time</option>
+                    <option value='Ultimate Atk'>Ultimate Atk</option>
+                </select>
                 <br/>
 
                 <label>Target Five Percentage: </label>
@@ -209,14 +346,36 @@ const AddRuneTarget = () => {
                 <br/>
 
                 <label>Target Six: </label>
-                <input
-                    type='text'
-                    id='hero_rune_target_6'
-                    value={runeTargetSix}
-                    autoComplete='off'
-                    onChange={(e) => setRuneTargetSix(e.target.value)}
-                    required
-                />
+                <select value={runeTargetSix} onChange={handleTargetSixChange}>
+                    <option value=''>Set Rune Target Six</option>
+                    <option value='AoE Damage'>AoE Damage</option>
+                    <option value='AoE Radius'>AoE Radius</option>
+                    <option value='ATK'>ATK</option>
+                    <option value='Atk per sec'>Atk per sec</option>
+                    <option value='Atk Range'>Atk Range</option>
+                    <option value='Bonus Gold'>Bonus Gold</option>
+                    <option value='Burn Chance'>Burn Chance</option>
+                    <option value='Burn Dmg'>Burn Dmg</option>
+                    <option value='Burn Time'>Burn Time</option>
+                    <option value='Critical Damage'>Critical Damage</option>
+                    <option value='Critical Rate'>Critical Rate</option>
+                    <option value='Def'>Def</option>
+                    <option value='Dodge Rate'>Dodge Rate</option>
+                    <option value='Effect Resistance'>Effect Resistance</option>
+                    <option value='Freeze Chance'>Freeze Chance</option>
+                    <option value='Freeze Ezplosion Dmg'>Freeze Ezplosion Dmg</option>
+                    <option value='Freeze Time'>Freeze Time</option>
+                    <option value='Frenzy Chance'>Frenzy Chance</option>
+                    <option value='HP'>HP</option>
+                    <option value='Knight Shield HP'>Knight Shield HP</option>
+                    <option value='Move Speed'>Move Speed</option>
+                    <option value='Poison Chance'>Poison Chance</option>
+                    <option value='Poison Dmg'>Poison Dmg</option>
+                    <option value='Poison Time'>Poison Time</option>
+                    <option value='Stun Chance'>Stun Chance</option>
+                    <option value='Stun Time'>Stun Time</option>
+                    <option value='Ultimate Atk'>Ultimate Atk</option>
+                </select>
                 <br/>
 
                 <label>Target Six Percentage: </label>
@@ -231,14 +390,36 @@ const AddRuneTarget = () => {
                 <br/>
 
                 <label>Target Seven: </label>
-                <input
-                    type='text'
-                    id='hero_rune_target_7'
-                    value={runeTargetSeven}
-                    autoComplete='off'
-                    onChange={(e) => setRuneTargetSeven(e.target.value)}
-                    required
-                />
+                <select value={runeTargetSeven} onChange={handleTargetSevenChange}>
+                    <option value=''>Set Rune Target Seven</option>
+                    <option value='AoE Damage'>AoE Damage</option>
+                    <option value='AoE Radius'>AoE Radius</option>
+                    <option value='ATK'>ATK</option>
+                    <option value='Atk per sec'>Atk per sec</option>
+                    <option value='Atk Range'>Atk Range</option>
+                    <option value='Bonus Gold'>Bonus Gold</option>
+                    <option value='Burn Chance'>Burn Chance</option>
+                    <option value='Burn Dmg'>Burn Dmg</option>
+                    <option value='Burn Time'>Burn Time</option>
+                    <option value='Critical Damage'>Critical Damage</option>
+                    <option value='Critical Rate'>Critical Rate</option>
+                    <option value='Def'>Def</option>
+                    <option value='Dodge Rate'>Dodge Rate</option>
+                    <option value='Effect Resistance'>Effect Resistance</option>
+                    <option value='Freeze Chance'>Freeze Chance</option>
+                    <option value='Freeze Ezplosion Dmg'>Freeze Ezplosion Dmg</option>
+                    <option value='Freeze Time'>Freeze Time</option>
+                    <option value='Frenzy Chance'>Frenzy Chance</option>
+                    <option value='HP'>HP</option>
+                    <option value='Knight Shield HP'>Knight Shield HP</option>
+                    <option value='Move Speed'>Move Speed</option>
+                    <option value='Poison Chance'>Poison Chance</option>
+                    <option value='Poison Dmg'>Poison Dmg</option>
+                    <option value='Poison Time'>Poison Time</option>
+                    <option value='Stun Chance'>Stun Chance</option>
+                    <option value='Stun Time'>Stun Time</option>
+                    <option value='Ultimate Atk'>Ultimate Atk</option>
+                </select>
                 <br/>
 
                 <label>Target Seven Percentage: </label>
@@ -250,6 +431,8 @@ const AddRuneTarget = () => {
                     onChange={(e) => setRuneTargetSevenPercentage(e.target.value)}
                     required
                 />
+                <br/>
+                <br/>
                 <br/>
 
                 <button type='submit'>Update</button>

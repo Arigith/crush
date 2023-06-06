@@ -61,6 +61,8 @@ const AddHeroInfo = () => {
                     onChange={(evt) => setHeroInfo(evt.target.value)}
                 />
                 <br/>
+                <br/>
+                <br/>
 
                 <button type='submit'>Update</button>
             </form>
