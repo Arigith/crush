@@ -54,6 +54,7 @@ const AddRune = () => {
         .then(resp => resp.json())
         .then(data => {console.log(data)})
         .catch(err => {console.log(err)})
+        .then(setSelectedHero(''))
         .then(setRuneone(''))
         .then(setRunetwo(''))
         .then(setRunethree(''))
@@ -72,88 +73,93 @@ const AddRune = () => {
                 </label>
                 <br/>
 
-                <select value={runeone} onChange={handleRuneOneChange}>
-                    <option value=''>Select Rune One</option>
-                    <option value='Blight'>Blight</option>
-                    <option value='Burning'>Burning</option>
-                    <option value='Chilling'>Chilling</option>
-                    <option value='Damage'>Damage</option>
-                    <option value='Dazed'>Dazed</option>
-                    <option value='Frenzy'>Frenzy</option>
-                    <option value='Frozen'>Frozen</option>
-                    <option value='Guard'>Guard</option>
-                    <option value='Helpful'>Helpful</option>
-                    <option value='Ignite'>Ignite</option>
-                    <option value='Intelligent'>Intelligent</option>
-                    <option value='Nimble'>Nimble</option>
-                    <option value='Phalanx'>Phalanx</option>
-                    <option value='Poisonous'>Poisonous</option>
-                    <option value='Precise'>Precise</option>
-                    <option value='Rage'>Rage</option>
-                    <option value='Resist'>Resist</option>
-                    <option value='Splash'>Splash</option>
-                    <option value='Spoiling'>Spoiling</option>
-                    <option value='Stunning'>Stunning</option>
-                    <option value='Swift'>Swift</option>
-                    <option value='Vitality'>Vitality</option>
-                    <option value='Wrath'>Wrath</option>
-                </select>
-                <br/>
+                {selectedHero && (
+                    <>
+{/* Below will be hidden until you choose a valid hero */}
+                    <select value={runeone} onChange={handleRuneOneChange}>
+                        <option value=''>Select Rune One</option>
+                        <option value='Blight'>Blight</option>
+                        <option value='Burning'>Burning</option>
+                        <option value='Chilling'>Chilling</option>
+                        <option value='Damage'>Damage</option>
+                        <option value='Dazed'>Dazed</option>
+                        <option value='Frenzy'>Frenzy</option>
+                        <option value='Frozen'>Frozen</option>
+                        <option value='Guard'>Guard</option>
+                        <option value='Helpful'>Helpful</option>
+                        <option value='Ignite'>Ignite</option>
+                        <option value='Intelligent'>Intelligent</option>
+                        <option value='Nimble'>Nimble</option>
+                        <option value='Phalanx'>Phalanx</option>
+                        <option value='Poisonous'>Poisonous</option>
+                        <option value='Precise'>Precise</option>
+                        <option value='Rage'>Rage</option>
+                        <option value='Resist'>Resist</option>
+                        <option value='Splash'>Splash</option>
+                        <option value='Spoiling'>Spoiling</option>
+                        <option value='Stunning'>Stunning</option>
+                        <option value='Swift'>Swift</option>
+                        <option value='Vitality'>Vitality</option>
+                        <option value='Wrath'>Wrath</option>
+                    </select>
+                    <br/>
 
-                <select value={runetwo} onChange={handleRuneTwoChange}>
-                    <option value=''>Select Rune Two</option>
-                    <option value='Blight'>Blight</option>
-                    <option value='Burning'>Burning</option>
-                    <option value='Chilling'>Chilling</option>
-                    <option value='Damage'>Damage</option>
-                    <option value='Dazed'>Dazed</option>
-                    <option value='Frenzy'>Frenzy</option>
-                    <option value='Frozen'>Frozen</option>
-                    <option value='Guard'>Guard</option>
-                    <option value='Helpful'>Helpful</option>
-                    <option value='Ignite'>Ignite</option>
-                    <option value='Intelligent'>Intelligent</option>
-                    <option value='Nimble'>Nimble</option>
-                    <option value='Phalanx'>Phalanx</option>
-                    <option value='Poisonous'>Poisonous</option>
-                    <option value='Precise'>Precise</option>
-                    <option value='Rage'>Rage</option>
-                    <option value='Resist'>Resist</option>
-                    <option value='Splash'>Splash</option>
-                    <option value='Spoiling'>Spoiling</option>
-                    <option value='Stunning'>Stunning</option>
-                    <option value='Swift'>Swift</option>
-                    <option value='Vitality'>Vitality</option>
-                    <option value='Wrath'>Wrath</option>
-                </select>
-                <br/>
+                    <select value={runetwo} onChange={handleRuneTwoChange}>
+                        <option value=''>Select Rune Two</option>
+                        <option value='Blight'>Blight</option>
+                        <option value='Burning'>Burning</option>
+                        <option value='Chilling'>Chilling</option>
+                        <option value='Damage'>Damage</option>
+                        <option value='Dazed'>Dazed</option>
+                        <option value='Frenzy'>Frenzy</option>
+                        <option value='Frozen'>Frozen</option>
+                        <option value='Guard'>Guard</option>
+                        <option value='Helpful'>Helpful</option>
+                        <option value='Ignite'>Ignite</option>
+                        <option value='Intelligent'>Intelligent</option>
+                        <option value='Nimble'>Nimble</option>
+                        <option value='Phalanx'>Phalanx</option>
+                        <option value='Poisonous'>Poisonous</option>
+                        <option value='Precise'>Precise</option>
+                        <option value='Rage'>Rage</option>
+                        <option value='Resist'>Resist</option>
+                        <option value='Splash'>Splash</option>
+                        <option value='Spoiling'>Spoiling</option>
+                        <option value='Stunning'>Stunning</option>
+                        <option value='Swift'>Swift</option>
+                        <option value='Vitality'>Vitality</option>
+                        <option value='Wrath'>Wrath</option>
+                    </select>
+                    <br/>
 
-                <select value={runethree} onChange={handleRuneThreeChange}>
-                    <option value=''>Select Rune Three</option>
-                    <option value='Blight'>Blight</option>
-                    <option value='Burning'>Burning</option>
-                    <option value='Chilling'>Chilling</option>
-                    <option value='Damage'>Damage</option>
-                    <option value='Dazed'>Dazed</option>
-                    <option value='Frenzy'>Frenzy</option>
-                    <option value='Frozen'>Frozen</option>
-                    <option value='Guard'>Guard</option>
-                    <option value='Helpful'>Helpful</option>
-                    <option value='Ignite'>Ignite</option>
-                    <option value='Intelligent'>Intelligent</option>
-                    <option value='Nimble'>Nimble</option>
-                    <option value='Phalanx'>Phalanx</option>
-                    <option value='Poisonous'>Poisonous</option>
-                    <option value='Precise'>Precise</option>
-                    <option value='Rage'>Rage</option>
-                    <option value='Resist'>Resist</option>
-                    <option value='Splash'>Splash</option>
-                    <option value='Spoiling'>Spoiling</option>
-                    <option value='Stunning'>Stunning</option>
-                    <option value='Swift'>Swift</option>
-                    <option value='Vitality'>Vitality</option>
-                    <option value='Wrath'>Wrath</option>
-                </select>
+                    <select value={runethree} onChange={handleRuneThreeChange}>
+                        <option value=''>Select Rune Three</option>
+                        <option value='Blight'>Blight</option>
+                        <option value='Burning'>Burning</option>
+                        <option value='Chilling'>Chilling</option>
+                        <option value='Damage'>Damage</option>
+                        <option value='Dazed'>Dazed</option>
+                        <option value='Frenzy'>Frenzy</option>
+                        <option value='Frozen'>Frozen</option>
+                        <option value='Guard'>Guard</option>
+                        <option value='Helpful'>Helpful</option>
+                        <option value='Ignite'>Ignite</option>
+                        <option value='Intelligent'>Intelligent</option>
+                        <option value='Nimble'>Nimble</option>
+                        <option value='Phalanx'>Phalanx</option>
+                        <option value='Poisonous'>Poisonous</option>
+                        <option value='Precise'>Precise</option>
+                        <option value='Rage'>Rage</option>
+                        <option value='Resist'>Resist</option>
+                        <option value='Splash'>Splash</option>
+                        <option value='Spoiling'>Spoiling</option>
+                        <option value='Stunning'>Stunning</option>
+                        <option value='Swift'>Swift</option>
+                        <option value='Vitality'>Vitality</option>
+                        <option value='Wrath'>Wrath</option>
+                    </select>
+                </>
+                )}
                 <br/>
                 <br/>
                 <br/>
